@@ -28,6 +28,7 @@ const Hotel = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  console.log(data)
   const { dates, options } = useContext(SearchContext);
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;

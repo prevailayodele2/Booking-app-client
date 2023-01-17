@@ -5,12 +5,13 @@ const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const backURL = 'http://localhost:8800/api'
+  const backURL = 'https://booking-api-nhwb.onrender.com/api'
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const res = await axios.get(backURL + url);
+        console.log(res, 'res')
         setData(res.data);
       } catch (err) {
         setError(err);
@@ -24,6 +25,7 @@ const useFetch = (url) => {
     setLoading(true);
     try {
       const res = await axios.get(backURL + url);
+      console.log(res, 'res')
       setData(res.data);
     } catch (err) {
       setError(err);
